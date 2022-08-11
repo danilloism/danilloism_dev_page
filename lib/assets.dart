@@ -1,5 +1,6 @@
 abstract class Assets {
-  static const String assetsProfile = 'assets/profile.jpeg';
-  static const String assetsProfile_alt = 'assets/profile-alt.jpeg';
-  static const list = [assetsProfile, assetsProfile_alt];
+  static const String profile = 'assets/profile.jpeg';
+  static const String profileAlt = 'assets/profile-alt.jpeg';
+  static const String profileAlt1 = 'assets/profile-alt-1.jpg';
+  static const list = [profile, profileAlt, profileAlt1];
 }

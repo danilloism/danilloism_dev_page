@@ -1,5 +1,7 @@
 import 'package:danilloism/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      home: HomePage(),
+    return RobotDetector(
+      child: ProviderScope(
+        child: MaterialApp(
+          navigatorObservers: [seoRouteObserver],
+          title: 'Danillo Ilggner\'s WebPage',
+          home: const HomePage(),
+        ),
+      ),
     );
   }
 }
