@@ -32,7 +32,7 @@ jobs:
           git config --global user.name danilloism
           git status
           git remote add origin https://${{secrets.TOKEN}}@github.com/danilloism/danilloism.github.io.git
-          git checkout -b gh-pages
+          git checkout -b main
           git add --all
           git commit -m "update"
-          git push origin gh-pages -f
+          git push origin main -f
