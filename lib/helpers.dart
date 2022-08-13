@@ -1,11 +1,11 @@
-import 'package:danilloism/home_page.dart';
-import 'package:danilloism/nav_bar.dart';
+import 'package:danilloism/app/presentation/widgets/nav_bar.dart';
+import 'package:danilloism/app/presentation/widgets/text_with_padding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-bool isMobile(BuildContext context) => MediaQuery.of(context).size.width <= 600;
+bool isMobile(BuildContext context) => MediaQuery.of(context).size.width <= 480;
 
 Future<void> launchLink(String url) async {
   final uri = Uri.parse(url);
@@ -56,3 +56,6 @@ final menuItems = [
     ),
   ),
 ];
+
+bool verticalMenuIsPossible(WidgetRef ref, BuildContext context) =>
+    ref.watch(verticalMenuNotifierProvider) && isMobile(context);
